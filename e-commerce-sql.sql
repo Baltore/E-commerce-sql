@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 24 nov. 2024 à 19:56
+-- Généré le : dim. 24 nov. 2024 à 20:10
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.18
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `e-commerce-sql`
 --
-CREATE DATABASE IF NOT EXISTS `e-commerce-sql` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
-USE `e-commerce-sql`;
 
 -- --------------------------------------------------------
 
@@ -102,9 +100,34 @@ CREATE TABLE IF NOT EXISTS `commande_article` (
   `id_commande` int NOT NULL,
   `id_produit` int NOT NULL,
   `quantite` int NOT NULL,
-  PRIMARY KEY (`id_commande`,`id_produit`),
   KEY `product_id` (`id_produit`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `commande_article`
+--
+
+INSERT INTO `commande_article` (`id_commande`, `id_produit`, `quantite`) VALUES
+(7, 29, 4),
+(6, 2, 4),
+(7, 34, 2),
+(7, 20, 4),
+(2, 17, 2),
+(5, 5, 3),
+(9, 37, 5),
+(4, 36, 5),
+(9, 6, 3),
+(8, 45, 3),
+(10, 37, 2),
+(6, 4, 3),
+(5, 3, 2),
+(2, 4, 3),
+(3, 20, 4),
+(8, 38, 3),
+(3, 17, 1),
+(1, 18, 1),
+(8, 2, 4),
+(4, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -255,9 +278,69 @@ CREATE TABLE IF NOT EXISTS `panier_article` (
   `id_panier` int NOT NULL,
   `id_produit` int NOT NULL,
   `quantite` int NOT NULL,
-  PRIMARY KEY (`id_panier`,`id_produit`),
   KEY `product_id` (`id_produit`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `panier_article`
+--
+
+INSERT INTO `panier_article` (`id_panier`, `id_produit`, `quantite`) VALUES
+(1, 45, 2),
+(3, 16, 3),
+(10, 43, 4),
+(7, 49, 4),
+(8, 29, 4),
+(2, 43, 2),
+(5, 35, 2),
+(4, 5, 1),
+(7, 34, 1),
+(6, 42, 1),
+(1, 20, 2),
+(4, 21, 5),
+(8, 30, 3),
+(6, 10, 3),
+(5, 43, 3),
+(6, 6, 3),
+(3, 36, 2),
+(7, 35, 2),
+(5, 27, 2),
+(6, 43, 3),
+(7, 17, 4),
+(6, 47, 4),
+(3, 3, 3),
+(2, 4, 2),
+(4, 22, 5),
+(2, 14, 5),
+(7, 12, 3),
+(8, 34, 10),
+(6, 20, 4),
+(6, 31, 1),
+(2, 9, 2),
+(2, 31, 1),
+(2, 8, 5),
+(4, 44, 1),
+(3, 1, 1),
+(4, 19, 4),
+(1, 24, 5),
+(9, 34, 4),
+(4, 12, 1),
+(5, 37, 1),
+(9, 8, 3),
+(3, 23, 2),
+(6, 23, 2),
+(8, 39, 2),
+(10, 6, 3),
+(3, 9, 5),
+(9, 9, 5),
+(8, 40, 5),
+(5, 10, 3),
+(6, 32, 1),
+(3, 7, 4),
+(7, 1, 3),
+(1, 29, 5),
+(3, 5, 5),
+(6, 21, 5);
 
 -- --------------------------------------------------------
 
