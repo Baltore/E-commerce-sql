@@ -39,6 +39,8 @@ php votre_script.php
 
 Cela remplira votre base de données avec des données fictives pour tester votre application e-commerce.
 
+## Outils
+
 - Faker pour la génération de données fictives.
 - PHP pour sa plateforme de développement.
 - MySQL pour la gestion de la base de données.
